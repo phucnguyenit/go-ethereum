@@ -22,6 +22,7 @@ gkai:
 	build/env.sh go run build/ci.go install ./cmd/gkai
 	@echo "Done building."
 	@echo "Run \"$(GOBIN)/gkai\" to launch gkai."
+	cp -f $(GOBIN)/* /usr/local/bin
 
 #swarm:
 #	build/env.sh go run build/ci.go install ./cmd/swarm
@@ -32,7 +33,6 @@ gkai:
 
 all:
 	build/env.sh go run build/ci.go install
-	cp -f $(GOBIN)/* /usr/local/bin
 
 #android:
 #	build/env.sh go run build/ci.go aar --local
