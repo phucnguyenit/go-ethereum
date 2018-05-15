@@ -32,7 +32,7 @@ gkai:
 
 all:
 	build/env.sh go run build/ci.go install
-	cp $(GOBIN)/* /usr/local/bin
+	cp -f $(GOBIN)/* /usr/local/bin
 
 #android:
 #	build/env.sh go run build/ci.go aar --local
