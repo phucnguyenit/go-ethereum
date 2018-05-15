@@ -2,7 +2,7 @@
 # with Go source code. If you know what GOPATH is then you probably
 # don't need to bother with make.
 
-.PHONY: gkai evm all test testCoin testToken clean
+.PHONY: gkai evm all test clean
 #.PHONY: geth android ios geth-cross swarm evm all test clean
 #.PHONY: geth-linux geth-linux-386 geth-linux-amd64 geth-linux-mips64 geth-linux-mips64le
 #.PHONY: geth-linux-arm geth-linux-arm-5 geth-linux-arm-6 geth-linux-arm-7 geth-linux-arm64
@@ -32,6 +32,7 @@ gkai:
 
 all:
 	build/env.sh go run build/ci.go install
+	cp $(GOBIN)/* /usr/local/bin
 
 #android:
 #	build/env.sh go run build/ci.go aar --local
@@ -156,5 +157,5 @@ gkai-windows-amd64:
 	build/env.sh go run build/ci.go xgo -- --go=$(GO) --targets=windows/amd64 -v ./cmd/gkai
 	@echo "Windows amd64 cross compilation done:"
 	@ls -ld $(GOBIN)/geth-windows-* | grep amd64
-	
+
 release: clean gwan-linux-amd64 gwan-windows-amd64 gwan-darwin-amd64
