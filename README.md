@@ -52,7 +52,7 @@ via HTTP, WS or IPC to a Gkai node configured with the above flags and you'll ne
 on all transports. You can reuse the same connection for multiple requests!
 
 **Note: Please understand the security implications of opening up an HTTP/WS based transport before
-doing so! Hackers on the internet are actively trying to subvert Karadi nodes with exposed APIs!
+doing so! Hackers on the internet are actively trying to subvert Kardia nodes with exposed APIs!
 Further, all browser tabs can access locally running webservers, so malicious webpages could try to
 subvert locally available APIs!**
 
